@@ -7,7 +7,8 @@ class Usuario extends Database {
         try{
             $db = $this->conectar();
             $query = $db->prepare($sql);
-            return $query->execute();
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
 
         }catch(PDOException $e){
             echo "Error al validar el usuario: " . $e->getMessage();

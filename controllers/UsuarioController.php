@@ -9,7 +9,7 @@ class UsuarioController{
         if(isset($_POST['user'])){
             $user = $_POST['user'];
             $password = $_POST['password'];
-
+            
             require 'models/Usuario.php';
             $usuarioModelo = new Usuario();
             $resultado = $usuarioModelo->comprobarUsuario($user, $password);
